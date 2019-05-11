@@ -1,0 +1,7 @@
+{% extends 'article/article_list.html' %}
+{% block title %}{{ article_type.type_name }}{% endblock %}
+
+{% block article_list_title %}
+    日期归档：{{ articles_with_date }}
+    <a href="{% url 'article_list' %}">查看全部文章</a>
+{% endblock %}
