@@ -22,12 +22,12 @@
                     {% for hot_data in today_hot_data %}
                         <li><a href="{% url 'article_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})</li>            
                     {% empty %}
-                        <li>今天暂时没有热门博客</li>
+                        <li>今天暂时没有热门文章</li>
                     {% endfor %}
                 </ul>
         </div>
         <div class="hot-data">
-            <h3>昨天热门博客</h3>
+            <h3>昨天热门文章</h3>
             <ul>
                 {% for hot_data in yesterday_hot_data %}
                     <li><a href="{% url 'article_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})</li>            
