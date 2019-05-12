@@ -6,10 +6,8 @@
 # 如何使用
 
 ```
-> virtualenv cloud_space
-> cd cloud_space
-> pip install -r requirements.txt
-> 
+> py_env\Scripts\activate
+
 ```
-## 进入 docker 以后, 运行 runserver.sh
-> ./runserver.sh
+## 进入 虚拟环境 以后, 运行 runserver
+> python manage.py runserver
