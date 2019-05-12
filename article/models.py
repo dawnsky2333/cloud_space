@@ -12,9 +12,9 @@ class ArticleType(models.Model):
 
 class Article(models.Model, ReadNumExpandMethod):
     title = models.CharField(max_length=50)
-    article_type = models.ForeignKey(ArticleType, on_delete=models.DO_NOTHING)
+    article_type = models.ForeignKey(ArticleType, on_delete=models.CASCADE)    
     content = RichTextUploadingField()
-    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)    
     read_details = GenericRelation(ReadDetail)
     created_time = models.DateTimeField(auto_now_add=True)
     last_updated_time = models.DateTimeField(auto_now=True)    
