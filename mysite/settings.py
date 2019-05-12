@@ -25,7 +25,7 @@ SECRET_KEY = '9qgh-%y9tr2*6cxvnzf8(u8a!&&&ea_-@-a18gooqunwozt)c$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cuzz.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'article',
     'read_statistics',
     'comment',
+    'likes',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'user.context_processors.login_modal_form',
             ],
         },
     },
@@ -124,7 +127,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -137,6 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_UPLOAD_PATH = 'upload/'
 
 CKEDITOR_CONFIGS = {
+    'default': {},
     'comment_ckeditor': {
         'toolbar': 'custom',
         'toolbar_custom': [
@@ -155,7 +158,7 @@ CKEDITOR_CONFIGS = {
 }
 
 # 自定义参数
-EACH_PAGE_ARTICLES_NUMBER = 7
+EACH_PAGE_BLOGS_NUMBER = 7
 
 # 缓存设置
 CACHES = {
